@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Website</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+    <link rel="stylesheet" href="style.css">
+    <style>
+       
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+   
+    #header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      background-color: #f9f9f9;
+    }
+    
+    .logo {
+      height: 50px;
+    }
+    
+    #navbar {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      font-size: 1.1rem;
+    }
+    
+    #navbar li a {
+      color: #333;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+    }
+    
+    #navbar li a:hover {
+      background-color: #333;
+      color: #fff;
+    }
+    
+    /* Style for the cart section */
+    #cart {
+      padding: 2rem;
+    }
+    
+    #cart h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    #cart-items {
+      margin-bottom: 2rem;
+    }
+    
+    .cart-item {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .cart-item-image {
+      flex-basis: 30%;
+    }
+    
+    .cart-item-image img {
+      width: 100%;
+    }
+    
+    .cart-item-details {
+      flex-basis: 70%;
+    }
+    
+    .cart-item-details h4 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .cart-item-details span {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    
+    #cart-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #f9f9f9;
+      padding: 1rem;
+      font-size: 1.2rem;
+    }
+    
+    #cart-total h2 {
+      margin-bottom: 0;
+    }
+    
+    #checkout-btn {
+      padding: 0.5rem 1rem;
+      border: none;
+      background-color: #333;
+      color: #fff;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+    
+    #checkout-btn:hover {
+      background-color: #444;
+    }
+    <style>
+  #cart-total {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"] {
+    font-size: 16px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+  
+  button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #0069d9;
+  }
+  
+  p {
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 50px;
+  }
+</style>
+
+    
+      </style>
+</head>
+<body>
+   
+    <section id="header" class="a">
+        <a href="#"><img src="./img/LL.png
+            
+            " class="logo"></a>
+        <div>
+            <ul id="navbar">
+                <li><a  href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a  href="about.html">About</a></li>
+                <li><a    href="contact.html">Contact</a></li>
+                <li><a class="active" href="cart.html"><i class="far fa-shopping-bag"></i></a></li>
+               
+                
+                
+            </ul>
+        </div>
+        <div id="mobile">
+             <a href="cart.html"><i class="far fa-shopping-bag"></i></a></a>
+            <i id="bar" class="fas fa-outdent"></i>
+           
+        </div>
+    </section>
+
+    
+ 
+
+    
+    
+    
+    <section id="page-header" class="about-header">
+     
+        <h2>#Happy Sell</h2>
+        <p>Thank you for being our valued customer...</p>
+       
+       
+    </section>
+
+    <section id="cart" class="section-p1">
+      <h1>Shopping Cart</h1>
+  
+      <div id="cart-items">
+        
+      </div>
+  
+      <div id="cart-total">
+        <h2>Total: <span id="total-price"></span></h2>
+        
+        <button id="checkout-btn"  class="normal">Proceed to checkout</button>
+      </div>
+    </section>
+
+   
+
+    <section id="dataa">
+        <h3>After shopping, you will receive data in the form of following table via email or WhatsApp</h3>
+    </section>
+    
+     <section id="cart" class="section-p1">
+        <table width="100%">
+            <thead>
+                <tr>
+                    <td> Remove</td>
+                    <td> Image</td>
+                    <td> Product</td>
+                    <td> Price</td>
+                    <td> Quantity</td>
+                    <td> Subtotal</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="#"><i class="far fa-times-circle"></i></a></td>
+                    <td><img  id="cartImg" src="img/Products/p1.jpg" alt=""></td>
+                    <td>Cartoon Astronaut T-shirt</td>
+                    <td> &#8377; 6000</td>
+                    <td><input type="number" value="1"></td>
+                    <td> &#8377; 6000</td>
+                </tr>
+                <tr>
+                    <td><a href="#"><i class="far fa-times-circle"></i></a></td>
+                    <td><img src="img/Products/p2.jpg" alt=""></td>
+                    <td>Cartoon Astronaut T-shirt</td>
+                    <td> &#8377; 6000</td>
+                    <td><input type="number" value="1"></td>
+                    <td> &#8377; 6000</td>
+                </tr>
+                <tr>
+                    <td><a href="#"><i class="far fa-times-circle"></i></a></td>
+                    <td><img src="img/Products/p3.jpg" alt=""></td>
+                    <td>Cartoon Astronaut T-shirt</td>
+                    <td> &#8377; 6000</td>
+                    <td><input type="number" value="1"></td>
+                    <td> &#8377; 6000</td>
+                </tr>
+            </tbody>
+
+        </table>
+     </section>
+
+
+
+     <p id="applybt"> If you have a coupon code, you must apply it by clicking the "Apply" button.</p>
+     <section id="cart-add" class="section-m1">
+      
+       <div id="coupon">
+           <h3>Apply  coupon</h3>
+       
+            <div>
+                <input type="text" placeholder="Enter  Your coupon">
+                <button onclick="coupon()" class="normal" id="coup">Apply</button>
+            </div>
+       </div>
+
+
+       <div id="subtotal">
+        <h3>Cart Total</h3>
+        <table>
+            <tr>
+                <td>Cart Subtotal</td>
+                <td> &#8377; 6000</td>
+            </tr>
+            <tr>
+               <td>Shopping</td>
+               <td>Free</td>
+            </tr>
+            <tr>
+                <td><strong>Total</strong></td>
+                <td><strong> &#8377; 6000</strong></td>
+            </tr>
+        </table>
+        <!-- <button class="normal">Proceed to checkout</button> -->
+       </div>
+     </section>
+          
+         
+       <h4>Instructions
+    </h4>
+        <hr>
+        <span id="instuction">
+            <li>If you can't receive the above data after shopping, please contact us.</li>
+        <li>Because that information is required for confirmation, we can only deliver to you once we receive it.</li>
+        <li>"Above is your currently added products in the cart:"</li>
+        <li>Please check Your Selected Product And click On Proceed to checkout Button </li>
+        </span>
+        <hr>    
+        <hr>
+
+   
+  
+
+  <script>
+    
+   // Retrieve the product information from localStorage
+const product = JSON.parse(localStorage.getItem('product'));
+
+// Check if there is a product in localStorage
+
+if (product) {
+
+  const cartItem = document.createElement('div');
+  cartItem.classList.add('cart-item');
+  cartItem.innerHTML = `
+    <div class="cart-item-image">
+      <img src="${product.imageUrl}" width="100%">
+      
+    </div>
+    <div class="cart-item-details">
+      <h4>${product.title}</h4>
+      <span>Size: ${product.size}</span>
+      <span>Quantity: ${product.quantity}</span>
+      <span>Price: ${product.price}</span>
+    </div>
+  `;
+
+
+  const cartItems = document.getElementById('cart-items');
+  cartItems.appendChild(cartItem);
+
+  
+  const totalPrice = parseInt(product.price.replace(/[^0-9]/g, '')) * parseInt(product.quantity);
+
+  
+  const total = document.getElementById('total-price');
+  total.textContent = `₹ ${totalPrice}`;
+}
+
+  </script>
+  <hr>
+
+
+     <footer class="section-p1">
+        <div class="col">
+            <img class="logo"   src="./img/LL.png">
+            <h4>Contact</h4>
+            <p> <strong>Address: </strong> Solapur 413002, Maharasthra</p>
+            <p> <strong>Phone:</strong> +91 7517537095 / +91 8265072217 </p>
+            <p> <Strong>Hours:</Strong>  10:00 - 18:00 , Mon-Sat </p>
+            <div class="follow">
+                    <h4>
+                        Follow us
+                    </h4>
+                    <div class="icon">
+                        <i class="fab fa-facebook-f"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-github"></i>
+                    </div>
+                </div>
+
+
+        </div>
+        <div class="col">
+            <h4>
+                About
+            </h4>
+            <a href="#">About</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Contact-us</a>
+        </div>
+        <div class="col">
+            <h4>
+               My Account
+            </h4>
+            <a href="#">Sign In</a>
+            <a href="#">View Cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Track My Order</a>
+            <a href="#">Help</a>
+        </div>
+
+        <div class="col install">
+        <h4>Install App</h4>
+        <p>From App Store or Google play</p>
+        <div class="row">
+            <img src="./img/pay/app.jpg">
+            <img src="./img/pay/play.jpg">
+
+        </div>
+        <p>Secured payment Geteways</p>
+        <img src="./img/pay/pay.png">
+        
+    </div>
+    <div class="copyright">
+        <p>@ 2023 , Ajay Morde -HTML CSS Ecommerce Template </p>
+    </div>
+
+     </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+            <script>
+              const checkoutBtn = document.getElementById('checkout-btn');
+checkoutBtn.addEventListener('click', function() {
+  const cartTotal = document.getElementById('total-price').textContent;
+  
+  // Display a form to get the address details
+  const addressForm = document.createElement('form');
+  addressForm.innerHTML = `
+    <h2>Enter Your Address Details</h2>
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    <div>
+      <label for="address1">Address Line 1:</label>
+      <input type="text" id="address1" name="address1" required>
+    </div>
+    <div>
+      <label for="address2">Address Line 2:</label>
+      <input type="text" id="address2" name="address2">
+    </div>
+    <div>
+      <label for="city">City:</label>
+      <input type="text" id="city" name="city" required>
+    </div>
+    <div>
+      <label for="state">State:</label>
+      <input type="text" id="state" name="state" required>
+    </div>
+    <div>
+      <label for="zip">Zip Code:</label>
+      <input type="text" id="zip" name="zip" required>
+    </div>
+    <div>
+      <button type="submit">Submit</button>
+    </div>
+  `;
+  
+  // Replace the checkout button with the address form
+  const cartTotalDiv = document.getElementById('cart-total');
+  cartTotalDiv.removeChild(checkoutBtn);
+  cartTotalDiv.appendChild(addressForm);
+  
+  // Listen for the form submission
+  addressForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    // Get the form values
+    const name = document.getElementById('name').value;
+    const address1 = document.getElementById('address1').value;
+    const address2 = document.getElementById('address2').value;
+    const city = document.getElementById('city').value;
+    const state = document.getElementById('state').value;
+    const zip = document.getElementById('zip').value;
+    
+    // Send the order details and address to the server
+    const orderDetails = {
+      total: cartTotal,
+      address: {
+        name: name,
+        address1: address1,
+        address2: address2,
+        city: city,
+        state: state,
+        zip: zip
+      }
+    };
+    sendOrderDetails(orderDetails);
+    
+    
+    const confirmationMsg = document.createElement('p');
+    confirmationMsg.textContent = 'Thank you for your order!';
+    cartTotalDiv.replaceChild(confirmationMsg, addressForm);
+  });
+});
+
+function sendOrderDetails(orderDetails) {
+  
+}
+
+            </script>
+   
+    <script src="script.js"></script>
+</body>
+</html>

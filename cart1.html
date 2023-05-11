@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Reset default browser styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style for the header section */
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f9f9f9;
+}
+
+.logo {
+  height: 50px;
+}
+
+#navbar {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  font-size: 1.1rem;
+}
+
+#navbar li a {
+  color: #333;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+}
+
+#navbar li a:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+/* Style for the cart section */
+#cart {
+  padding: 2rem;
+}
+
+#cart h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+#cart-items {
+  margin-bottom: 2rem;
+}
+
+.cart-item {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.cart-item-image {
+  flex-basis: 30%;
+}
+
+.cart-item-image img {
+  width: 100%;
+}
+
+.cart-item-details {
+  flex-basis: 70%;
+}
+
+.cart-item-details h4 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.cart-item-details span {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+#cart-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f9f9f9;
+  padding: 1rem;
+  font-size: 1.2rem;
+}
+
+#cart-total h2 {
+  margin-bottom: 0;
+}
+
+#checkout-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #333;
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+#checkout-btn:hover {
+  background-color: #444;
+}
+
+  </style>
+</head>
+<body>
+  <section id="header" class="a">
+    <a href="#"><img src="./img/LL.png" class="logo"></a>
+    <div>
+      <ul id="navbar">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="cart1.html"><i class="far fa-shopping-bag"></i></a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="cart" class="section-p1">
+    <h1>Shopping Cart</h1>
+
+    <div id="cart-items">
+      <!-- Cart items will be displayed here -->
+    </div>
+
+    <div id="cart-total">
+      <h2>Total: <span id="total-price"></span></h2>
+      
+      <button id="checkout-btn"  class="normal">Proceed to checkout</button>
+    </div>
+  </section>
+
+  <script>
+    // Retrieve the product information from localStorage
+   // Retrieve the product information from localStorage
+const product = JSON.parse(localStorage.getItem('product'));
+
+// Check if there is a product in localStorage
+
+if (product) {
+  // Create an HTML element for the product information
+  const cartItem = document.createElement('div');
+  cartItem.classList.add('cart-item');
+  cartItem.innerHTML = `
+    <div class="cart-item-image">
+      <img src="${product.imageUrl}" width="100%">
+      
+    </div>
+    <div class="cart-item-details">
+      <h4>${product.title}</h4>
+      <span>Size: ${product.size}</span>
+      <span>Quantity: ${product.quantity}</span>
+      <span>Price: ${product.price}</span>
+    </div>
+  `;
+
+  // Add the cart item to the cart
+  const cartItems = document.getElementById('cart-items');
+  cartItems.appendChild(cartItem);
+
+  // Calculate the total price
+  const totalPrice = parseInt(product.price.replace(/[^0-9]/g, '')) * parseInt(product.quantity);
+
+  // Display the total price
+  const total = document.getElementById('total-price');
+  total.textContent = `₹ ${totalPrice}`;
+}
+
+  </script>
+</body>
+</html>

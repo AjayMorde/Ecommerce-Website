@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sign Up</title>
+    <link rel="stylesheet" href="style.css">
+	<style>
+		form {
+			margin: 0 auto;
+			width: 50%;
+			padding: 20px;
+			border: 1px solid #ccc;
+			border-radius: 10px;
+		}
+
+		input[type=text], input[type=email], input[type=password] {
+			width: 100%;
+			padding: 12px 20px;
+			margin: 8px 0;
+			display: inline-block;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			box-sizing: border-box;
+		}
+
+		button {
+			background-color: #4CAF50;
+			color: white;
+			padding: 14px 20px;
+			margin: 8px 0;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			width: 100%;
+		}
+
+		button:hover {
+			background-color: #45a049;
+		}
+
+		.container {
+			padding: 16px;
+		}
+
+		span.psw {
+			float: right;
+			padding-top: 16px;
+		}
+
+		@media screen and (max-width: 300px) {
+			span.psw {
+				display: block;
+				float: none;
+			}
+		}
+	</style>
+	<script>
+		function checkPasswordMatch() {
+			var password = document.getElementById("psw").value;
+			var confirmPassword = document.getElementById("psw-repeat").value;
+			if (password != confirmPassword) {
+				document.getElementById("message").innerHTML = "Passwords do not match!";
+				document.getElementById("registerBtn").disabled = true;
+			} else {
+				document.getElementById("message").innerHTML = "";
+				document.getElementById("registerBtn").disabled = false;
+			}
+		}
+	</script>
+</head>
+<body>
+
+    <section id="header" class="a">
+        <a href="#"><img src="./img/LL.png"class="logo"></a>
+        <div>
+            <ul id="navbar">
+                <li><a class="active" href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html"><i class="far fa-shopping-bag"></i></a></li>
+               
+                
+                
+            </ul>
+        </div>
+        <div id="mobile">
+             <a href="cart.html"><i class="far fa-shopping-bag"></i></a></a>
+            <i id="bar" class="fas fa-outdent"></i>
+           
+        </div>
+    </section>
+ 
+
+	<form>
+		<div class="container">
+			<h1>Sign Up</h1>
+			<p>Please fill in this form to create an account.</p>
+			<hr>
+
+			<label for="name"><b>Name</b></label>
+			<input type="text" placeholder="Enter Name" name="name" required>
+
+			<label for="email"><b>Email</b></label>
+			<input type="email" placeholder="Enter Email" name="email" required>
+
+			<label for="psw"><b>Password</b></label>
+			<input type="password" placeholder="Enter Password" name="psw" id="psw" onkeyup="checkPasswordMatch();" required>
+
+			<label for="psw-repeat"><b>Repeat Password</b></label>
+			<input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" onkeyup="checkPasswordMatch();" required>
+			<div id="message" style="color:red;"></div>
+			<hr>
+
+			<button type="submit" class="registerbtn" id="registerBtn" disabled>Register</button>
+		</div>
+	</form>
+
+    
+
+</body>
+</html>
